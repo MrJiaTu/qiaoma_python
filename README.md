@@ -30,18 +30,43 @@
 
 ## 安装
 
-需要 Python 3.9+（推荐 3.10+）。把仓库克隆到本地后，在仓库根目录执行：
+需要 Python 3.9+（推荐 3.10+）。把仓库克隆到本地后，在仓库根目录执行。
+
+**uv（推荐）**
+
+需要先装 uv：https://docs.astral.sh/uv/
 
 ```bash
+uv venv
+uv pip install -e .
+```
+
+**pip + venv**
+
+```bash
+python -m venv .venv
+
+# Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+# macOS / Linux
+source .venv/bin/activate
+
 pip install -e .
 ```
 
+要跑测试就换成开发依赖：`pip install -e ".[dev]"`（uv 用户 `uv pip install -e ".[dev]"`）。
+
 ## 快速开始
+
+命令要在同一个虚拟环境里执行。uv 用户也可以不加激活，直接用 `uv run`：
 
 ```bash
 qiaoma init --path ~/qiaoma-workspace   # 创建学习工作区（题目副本）
 cd ~/qiaoma-workspace
 qiaoma                                  # 打开做题界面
+
+# uv 用户等价写法
+uv run qiaoma init --path ~/qiaoma-workspace
 ```
 
 ## 命令一览
@@ -107,6 +132,8 @@ docs/design/               # 设计说明（顺序解锁、课题导航）
 pip install -e ".[dev]"
 python -m pytest -q        # 全量测试（含 280 题参考解答可解性验证）
 ```
+
+用 uv 的话：`uv pip install -e ".[dev]"`，然后 `uv run pytest -q`。
 
 添加新课题：在 `qiaoma/curriculum/` 的 `exercises/`、`checks/` 增加镜像文件，
 在 `info.toml` 登记课题与题目，并在 `tests/solutions/` 补上参考解答。
