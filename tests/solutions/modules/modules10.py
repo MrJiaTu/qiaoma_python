@@ -1,0 +1,4 @@
+import random
+
+numbers = ["A001", "A002", "A003", "A004", "A005"]
+winners = random.sample(numbers, 2)

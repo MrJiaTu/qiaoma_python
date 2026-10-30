@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qiaoma"
+version = "0.1.0"
+description = "敲码：在终端里手敲 Python 代码学习 —— rustlings/pythonlings 风格的中文练习工具"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "qiaoma" }]
+dependencies = [
+    "textual>=0.60",
+    "rich>=13.0",
+    "tomli>=2.0; python_version < '3.11'",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+]
+
+[project.scripts]
+qiaoma = "qiaoma.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["qiaoma*"]
+
+[tool.setuptools.package-data]
+qiaoma = ["curriculum/**/*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

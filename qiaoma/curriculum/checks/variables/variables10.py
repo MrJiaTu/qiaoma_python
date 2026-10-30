@@ -1,0 +1,6 @@
+assert isinstance(name, str), "name 应该是字符串"
+assert isinstance(age, int) and not isinstance(age, bool), "age 应该是整数 int，不是字符串"
+assert age == 20, f"年龄应该是 20，而不是 {age}"
+assert isinstance(height_cm, float), "height_cm 应该是 float"
+assert is_student is True, "is_student 应该是 True"
+assert greeting == "我叫李雷，今年20岁", f"greeting 内容不对：{greeting!r}"
