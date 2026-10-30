@@ -26,7 +26,7 @@ from typing import List, Optional
 
 if sys.version_info >= (3, 11):
     import tomllib
-else:  # pragma: no cover - 3.9/3.10 回退
+else:  # pragma: no cover - 3.10 回退
     import tomli as tomllib
 
 

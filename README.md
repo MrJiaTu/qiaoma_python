@@ -30,16 +30,23 @@
 
 ## 安装
 
-需要 Python 3.9+（推荐 3.10+）。把仓库克隆到本地后，在仓库根目录执行。
+需要 Python 3.10+。把仓库克隆到本地后，在仓库根目录执行。
 
 **uv（推荐）**
 
 需要先装 uv：https://docs.astral.sh/uv/
 
+uv 能自己下载并管理 Python 版本，不用自己找安装包：
+
 ```bash
-uv venv
+uv python list                  # 看本机有哪些 Python 版本
+uv python install 3.12          # 装一个 3.10+ 的版本（不写版本号就取最新稳定版）
+
+uv venv --python 3.12           # 用它建虚拟环境
 uv pip install -e .
 ```
+
+想让整个项目固定用某个版本，执行 `uv python pin 3.12`，它会在项目里写一个 `.python-version` 文件。
 
 **pip + venv**
 

@@ -7,7 +7,7 @@ name = "qiaoma"
 version = "0.1.0"
 description = "敲码：在终端里手敲 Python 代码学习 —— rustlings/pythonlings 风格的中文练习工具"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "qiaoma" }]
 dependencies = [
@@ -33,4 +33,5 @@ qiaoma = ["curriculum/**/*"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
 testpaths = ["tests"]
