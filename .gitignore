@@ -20,6 +20,9 @@ htmlcov/
 # 学员工作区（本地练习数据不入库）
 qiaoma-workspace/
 
+# 现成的完整演示工作区（与 qiaoma/curriculum 重复，需要时用 qiaoma init 生成）
+demo-workspace/
+
 # AI 工具的技能缓存（本地工具链，与项目无关）
 .agents/
 .claude/
